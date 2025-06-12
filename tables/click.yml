@@ -1,0 +1,22 @@
+tables:
+  - name: click_ba
+    sql: {{ load_sql('click') }}
+    description: click location info
+    public: true
+
+    dimensions:
+      - name: 
+        column: ds
+        type: string
+        description: date info
+
+      - name: delivered_ba_cpc_net_usd
+        column: delivered_ba_cpc_net_usd
+        type: number
+        description: currency in usd
+        
+      - name: location_id
+        column: location_id
+        type: number
+        description: location id
+        primary_key: true

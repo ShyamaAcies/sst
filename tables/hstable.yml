@@ -1,0 +1,32 @@
+tables:
+  - name: hs_product
+    sql: {{ load_sql('hs') }}
+    description: hs product info
+    public: true
+
+    dimensions:
+      - name: sku
+        column: sku
+        type: string
+        description: stock keeping unit
+        primary_key: true
+
+      - name: product_division
+        column: product_division
+        type: string
+        description: product division
+        
+      - name: product_department
+        column: product_department
+        type: string
+        description: product department
+
+      - name: product_family
+        column: product_family
+        type: string
+        description: product family
+      
+      - name: product_class
+        column: product_class
+        type: string
+        description: product class

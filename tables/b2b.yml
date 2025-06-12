@@ -1,0 +1,28 @@
+tables:
+  - name: b2b
+    sql: {{ load_sql('b2b') }}
+    description: b2b info
+    public: true
+
+    dimensions:
+      - name: place_type
+        column: place_type
+        type: string
+        description: place type
+        
+
+      - name: location_id
+        column: location_id
+        type: number
+        description: Purchase History
+        primary_key: true
+        
+      - name: package_status_name
+        column: package_status_name
+        type: string
+        description: package status name
+
+      - name: package_sku
+        column: package_sku
+        type: string
+        description: package status name  
