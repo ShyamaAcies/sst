@@ -4,6 +4,11 @@ tables:
     description: hs product info
     public: true
 
+    joins:
+      - name: click_ba
+        relationship: one_to_one
+        sql: "{TABLE.sku}={click_ba.product}"
+
     dimensions:
       - name: sku
         column: sku
@@ -30,3 +35,13 @@ tables:
         column: product_class
         type: string
         description: product class
+
+      - name: delivered_ba_cpc_net_usd
+        column: "{click_ba.delivered_ba_cpc_net_usd}"
+        type: number
+        description: currency in usd
+
+      - name: location_id
+        column: "{click_ba.location_id}"
+        type: number
+        description: currency in usd

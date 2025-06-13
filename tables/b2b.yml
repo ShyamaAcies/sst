@@ -4,6 +4,10 @@ tables:
     description: b2b info
     public: true
 
+  - name: click_ba
+    relationship: one_to_one
+    sql: "{TABLE.package_sku}={click_ba.product}"
+
     dimensions:
       - name: place_type
         column: place_type
@@ -26,3 +30,13 @@ tables:
         column: package_sku
         type: string
         description: package status name  
+
+      - name: delivered_ba_cpc_net_usd
+        column: "{click_ba.delivered_ba_cpc_net_usd}"
+        type: number
+        description: currency in usd
+
+      - name: location_id
+        column: "{click_ba.location_id}"
+        type: number
+        description: currency in usd
