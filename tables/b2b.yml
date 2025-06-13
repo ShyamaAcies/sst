@@ -1,12 +1,12 @@
 tables:
-  - name: b2b
+  - name: b2bupdated
     sql: {{ load_sql('b2b') }}
     description: b2b info
     public: true
 
   - name: click_ba
     relationship: one_to_one
-    sql: "{TABLE.package_sku}={click_ba.product}"
+    sql: "{TABLE.package_sku}={click_ba.package_sku}"
 
     dimensions:
       - name: place_type
@@ -19,7 +19,7 @@ tables:
         column: location_id
         type: number
         description: Purchase History
-        primary_key: true
+        
         
       - name: package_status_name
         column: package_status_name
@@ -29,7 +29,8 @@ tables:
       - name: package_sku
         column: package_sku
         type: string
-        description: package status name  
+        description: package status name 
+        primary_key: true 
 
       - name: delivered_ba_cpc_net_usd
         column: "{click_ba.delivered_ba_cpc_net_usd}"

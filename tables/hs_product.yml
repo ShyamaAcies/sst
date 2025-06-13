@@ -7,7 +7,7 @@ tables:
     joins:
       - name: click_ba
         relationship: one_to_one
-        sql: "{TABLE.sku}={click_ba.product}"
+        sql: "{TABLE.sku}={click_ba.package_sku}"
 
     dimensions:
       - name: sku

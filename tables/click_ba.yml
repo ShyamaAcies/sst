@@ -5,7 +5,7 @@ tables:
     public: true
 
     dimensions:
-      - name: 
+      - name: ds
         column: ds
         type: string
         description: date info
